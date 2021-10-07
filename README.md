@@ -1,14 +1,17 @@
-##Development Recipe
-start TransferApplication.java from intellij 
-open browser to http://localhost:8096/swagger-ui.html
+![plot](https://github.com/bibimchi/whiteplayground.frontend/blob/master/src/asset/favicon.png)
 
-##Docker Recipe
-gradle build
-docker build -t imagename .
-docker run --detach --publish 8096:8096 --name containername imagegname
-open browser to http://localhost:8096/swagger-ui.html
+## Development Recipe
+* start TransferApplication.java from intellij 
+* open browser to http://localhost:8096/swagger-ui.html
 
-##demo
-[here](https://kimchistudio.tech/wp/back/swagger-ui.html)
+## Docker Recipe
+* gradle build
+* docker build -t imagename .
+* docker run --detach --publish 8096:8096 --name containername imagegname
+* open browser to http://localhost:8096/swagger-ui.html
+
+## Demo
+* [here](https://kimchistudio.tech/wp/back/swagger-ui.html)
+
 ##docker image
-[here](https://hub.docker.com/repository/docker/kimchiboy/wp_back)
+* [here](https://hub.docker.com/repository/docker/kimchiboy/wp_back)
