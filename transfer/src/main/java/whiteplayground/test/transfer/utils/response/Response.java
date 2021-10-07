@@ -1,6 +1,6 @@
 package whiteplayground.test.transfer.utils.response;
 
-public class Response<T> extends BasicResponse{
+public class Response<T> extends EmptyResponse {
     private T value;
 
     public Response(T value, boolean success, String message) {

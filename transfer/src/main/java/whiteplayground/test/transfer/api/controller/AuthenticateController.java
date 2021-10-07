@@ -20,26 +20,30 @@ public class AuthenticateController {
 
     @PostMapping("signIn")
     public Mono<ResponseEntity<? extends Serializable>> signIn(@RequestBody AuthenticateRequest ar) {
-        return this.customerSvc.signIn(ar).map(e -> {
-            if (e.isSuccess()) {
-                return ResponseEntity.ok(e.getValue());
+        return this.customerSvc.signIn(ar).map(response -> {
+            if (response.isSuccess()) {
+                return ResponseEntity.status(HttpStatus.OK)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .body(response.getValue());
             } else {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                         .contentType(MediaType.TEXT_HTML)
-                        .body(e.getMessage());
+                        .body(response.getMessage());
             }
         });
     }
 
     @PostMapping("signUp")
     public Mono<ResponseEntity<? extends Serializable>> signUp(@RequestBody AuthenticateRequest ar) {
-        return this.customerSvc.signUp(ar).map(e -> {
-            if (e.isSuccess()) {
-                return ResponseEntity.ok(e.getValue());
+        return this.customerSvc.signUp(ar).map(response -> {
+            if (response.isSuccess()) {
+                return ResponseEntity.status(HttpStatus.OK)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .body(response.getValue());
             } else {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                         .contentType(MediaType.TEXT_HTML)
-                        .body(e.getMessage());
+                        .body(response.getMessage());
             }
         });
     }

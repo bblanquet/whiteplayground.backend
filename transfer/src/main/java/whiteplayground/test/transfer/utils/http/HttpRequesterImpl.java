@@ -28,7 +28,6 @@ public class HttpRequesterImpl<TParam, TResult> implements HttpRequester<TParam,
                     .addParameters(params)
                     .build();
 
-            System.out.println("request " + uri.toString());
             return HttpClient.create()
                     .baseUrl(uri.toString())
                     .get()

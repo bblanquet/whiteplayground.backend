@@ -1,10 +1,10 @@
 package whiteplayground.test.transfer.utils.response;
 
-public class BasicResponse extends Object {
+public class EmptyResponse {
     protected boolean success;
     protected String message;
 
-    public BasicResponse(boolean success, String message) {
+    public EmptyResponse(boolean success, String message) {
         this.success = success;
         this.message = message;
     }

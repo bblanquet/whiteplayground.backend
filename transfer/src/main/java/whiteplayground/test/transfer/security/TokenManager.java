@@ -5,7 +5,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import whiteplayground.test.transfer.model.Customer;
+import whiteplayground.test.transfer.model.CustomerEntity;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -37,7 +37,7 @@ public class TokenManager {
         return expiration.before(new Date());
     }
 
-    public String generateToken(Customer user) {
+    public String generateToken(CustomerEntity user) {
         Map<String, Object> claims = new HashMap<>();
         claims.put("role", new Role[]{Role.ROLE_USER});
         return doGenerateToken(claims, user.getName());
