@@ -7,7 +7,7 @@
 ## Docker Recipe
 * gradle build
 * docker build -t imagename .
-* docker run --detach --publish 8096:8096 --name containername imagegname
+* docker run --detach --publish 8096:8096 --name containername --env spring.config.name="local.docker" imagegname
 * open browser to http://localhost:8096/swagger-ui.html
 
 ## Demo
